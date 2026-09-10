@@ -22,20 +22,20 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "RadarObrasDF — Obras aprovadas no DF antes dos concorrentes" },
+      { title: "RadarObrasDF — Inteligência de Mercado B2B no DF" },
       {
         name: "description",
         content:
-          "Alvarás de construção, reforma, demolição e habite-se publicados no DODF, no seu WhatsApp às 8h. Solicite uma amostra personalizada.",
+          "Monitore grandes contratos públicos e obras privadas em tempo real no DF. Antecipe-se à demanda de insumos, máquinas pesadas e serviços.",
       },
       {
         property: "og:title",
-        content: "RadarObrasDF — Obras aprovadas no DF antes dos concorrentes",
+        content: "RadarObrasDF — Inteligência de Mercado B2B no DF",
       },
       {
         property: "og:description",
         content:
-          "Radar diário de obras aprovadas pela SEDUH/CAP no Distrito Federal. Alerta no WhatsApp às 8h e painel filtrável por região.",
+          "Inteligência de mercado para fornecedores da construção no DF. Monitore contratos e obras em tempo real.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -71,7 +71,7 @@ function SampleForm({ trigger }: { trigger: React.ReactNode }) {
             Solicitação recebida!
           </DialogTitle>
           <DialogDescription className="pt-4 text-lg leading-relaxed text-foreground">
-            Para garantir que você receba os dados mais relevantes para o seu nicho, um consultor enviará sua amostra personalizada diretamente no seu WhatsApp em instantes.
+            Para garantir que você receba a inteligência mais estratégica para o seu negócio, um consultor enviará sua amostra personalizada de contratos e obras diretamente no seu WhatsApp em instantes.
           </DialogDescription>
         </DialogHeader>
         <div className="mt-6 flex justify-end">
@@ -92,10 +92,10 @@ function SampleForm({ trigger }: { trigger: React.ReactNode }) {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="font-mono text-xl font-bold uppercase tracking-tight">
-            Receber Amostra Personalizada
+            Amostra de Inteligência de Mercado
           </DialogTitle>
           <DialogDescription>
-            Informe seus dados para receber o PDF com as obras de hoje no seu
+            Informe seus dados para receber o PDF com os contratos e obras de hoje no seu
             WhatsApp.
           </DialogDescription>
         </DialogHeader>
@@ -133,7 +133,7 @@ function SampleForm({ trigger }: { trigger: React.ReactNode }) {
             type="submit"
             className="mt-2 w-full bg-primary py-6 font-mono text-sm font-bold uppercase tracking-widest text-primary-foreground transition-opacity hover:opacity-85"
           >
-            Solicitar Amostra (PDF)
+            Receber Amostra de Inteligência (PDF)
           </Button>
         </form>
       </DialogContent>
@@ -158,85 +158,85 @@ function PrimaryCta({ className = "" }: { className?: string }) {
 const passos = [
   {
     id: "01",
-    titulo: "Varredura diária do DODF",
+    titulo: "Monitoramento de Contratos e Obras",
     texto:
-      "Todo dia útil o radar lê as publicações da SEDUH/CAP no Diário Oficial do Distrito Federal, sem depender de ninguém abrir PDF.",
+      "Varredura diária de grandes contratos públicos e obras privadas de alto impacto no DF, capturando oportunidades antes de chegarem ao mercado.",
   },
   {
     id: "02",
-    titulo: "Extração dos alvarás",
+    titulo: "Inteligência de Dados",
     texto:
-      "Alvará de construção, reforma, demolição e habite-se com dados completos: requerente, endereço, região administrativa, metragem, responsável técnico e processo SEI.",
+      "Extração detalhada de alvarás e contratos: valor do contrato, metragem, requerente, localização e responsáveis, tudo identificado via processo SEI.",
   },
   {
     id: "03",
-    titulo: "Comodidade no WhatsApp",
+    titulo: "Ação Comercial Imediata",
     texto:
-      "Receba a lista mastigada no WhatsApp às 8h. Filtre por região e decida onde sua equipe vai atacar hoje, sem perder tempo lendo o Diário Oficial.",
+      "Receba a central de inteligência no seu WhatsApp às 8h. Antecipe-se à demanda de insumos e máquinas pesadas enquanto a concorrência ainda nem sabe do projeto.",
   },
 ];
 
 const beneficios = [
   {
-    titulo: "Alerta no mesmo dia",
+    titulo: "Alerta de Grandes Contratos",
     texto:
-      "Publicou no DODF, chegou no seu WhatsApp às 8h. Você liga enquanto o concorrente ainda não sabe que a obra existe.",
+      "Publicou no DODF ou identificado em licitações, chegou no seu WhatsApp às 8h. Antecipe-se à demanda de cimento, aço e máquinas.",
   },
   {
-    titulo: "Dados completos do processo",
+    titulo: "Inteligência de Mercado",
     texto:
-      "Requerente, endereço, metragem, tipo de obra, responsável técnico e número do processo SEI para abordar com contexto.",
+      "Requerente, endereço, metragem, tipo de obra e processo SEI completo para uma abordagem comercial consultiva e estratégica.",
   },
   {
-    titulo: "Filtro por região administrativa",
+    titulo: "Filtro por RA e Escala",
     texto:
-      "Asa Sul, Asa Norte, Lago Sul, Lago Norte, Águas Claras, Vicente Pires, Park Way, SIA, Taguatinga, Ceilândia, Guará.",
+      "Monitore todo o DF ou regiões específicas. Ideal para logística de insumos e posicionamento de frotas pesadas.",
   },
   {
-    titulo: "Filtro por metragem e tipo",
+    titulo: "Monitoramento de Projetos",
     texto:
-      "Separe reforma de 80 m² de torre de 12 mil m². Cada equipe recebe só o que fecha contrato.",
+      "Acompanhe desde o alvará de construção até o habite-se. Esteja presente em todas as fases críticas de suprimento.",
   },
   {
-    titulo: "Exportação CSV / Excel",
+    titulo: "Integração com CRM",
     texto:
-      "Leve a lista para o seu CRM ou para a planilha do time comercial em um clique.",
+      "Exportação CSV / Excel para alimentar seu funil de vendas B2B com leads qualificados de alto valor.",
   },
   {
-    titulo: "Multi-usuário",
+    titulo: "Múltiplos Consultores",
     texto:
-      "Vendedor de caçamba, vendedor de andaime e o dono acompanham o mesmo radar, cada um com seu filtro.",
+      "Equipes comercial e operacional conectadas à mesma central de inteligência, cada uma focada no seu segmento.",
   },
 ];
 
 const segmentos = [
-  "Locadoras de caçambas e gestão de entulho",
-  "Locadoras de andaimes e equipamentos",
-  "Instaladores de energia solar",
-  "Ar-condicionado corporativo e exaustão",
-  "Cercamento provisório e segurança de canteiro",
+  "Indústrias de Insumos: Fornecedores de concreto, aço, cimento e materiais de base.",
+  "Frotas de Máquinas Pesadas: Locadoras de escavadeiras, guindastes, patrolas e pavimentação.",
+  "Serviços de Engenharia: Escritórios de projetos, consultoria ambiental e gerenciamento.",
+  "Segurança e Infraestrutura: Cercamento de canteiro, vigilância e instalações provisórias.",
+  "EPIs e Ferramentas: Fornecedores de equipamentos de proteção e ferramentas industriais.",
 ];
 
 const dores = [
   {
-    titulo: "O concorrente fechou antes",
+    titulo: "Insumos Vendidos pela Concorrência",
     texto:
-      "Quando você descobre a obra pelo boca a boca, o contrato de locação já está assinado com outro fornecedor.",
+      "Quando você descobre o contrato, o fornecedor de concreto e aço já foi escolhido. A antecipação é a chave no B2B.",
   },
   {
-    titulo: "A obra já começou",
+    titulo: "Frotas Ociosas no Pátio",
     texto:
-      "Chegar depois da primeira semana de canteiro é chegar quando as decisões de fornecedor já foram tomadas.",
+      "Máquina pesada parada é custo alto. Garanta um fluxo constante de novas obras e contratos para manter sua frota em campo.",
   },
   {
-    titulo: "Caçamba e andaime parados",
+    titulo: "Vendas sem Estratégia",
     texto:
-      "Equipamento parado é prejuízo diário. Garanta que sua frota esteja sempre em campo com um fluxo ininterrupto de novos alvarás.",
+      "Sua equipe comercial prospecta no escuro, sem saber quem realmente tem poder de compra e contratos assinados no momento.",
   },
   {
-    titulo: "Prospecção no escuro",
+    titulo: "Perda de Prazos de Licitação",
     texto:
-      "Time comercial rodando bairro atrás de tapume é caro, lento e depende de sorte.",
+      "Não monitorar contratos públicos significa perder a chance de subcontratação e fornecimento para grandes obras de infraestrutura.",
   },
 ];
 
@@ -249,7 +249,7 @@ const planos = [
       "Alertas diários no WhatsApp",
       "Painel web filtrável",
       "1 usuário",
-      "Todas as regiões administrativas",
+      "Monitoramento de Alvarás e Contratos",
     ],
     destaque: false,
     cta: "Assinar e Ativar Radar",
@@ -261,10 +261,10 @@ const planos = [
     itens: [
       "Tudo do Básico",
       "Multi-usuários",
-      "Exportação CSV / Excel",
-      "Filtros salvos por vendedor",
+      "Exportação CSV / Excel para CRM",
+      "Filtros avançados por consultor",
       "Prioridade no suporte",
-      "Inclui exportação para CRM e suporte prioritário para grandes frotas.",
+      "Relatórios de inteligência customizados para grandes frotas e indústrias.",
     ],
     destaque: true,
     cta: "Assinar e Ativar Radar",
@@ -280,11 +280,11 @@ function Index() {
           <div className="flex items-center gap-2.5">
             <Radar className="size-5 text-signal" />
             <span className="font-mono text-sm font-bold tracking-tight">
-              RadarObras<span className="text-signal">DF</span>
+              Plataforma de Inteligência<span className="text-signal"> B2B</span>
             </span>
           </div>
           <div className="hidden font-mono text-xs text-muted-foreground sm:block">
-            fonte: DODF · SEDUH/CAP · dias úteis 08:00
+            monitoramento em tempo real · contratos e insumos · DF
           </div>
           <SampleForm
             trigger={
@@ -300,22 +300,19 @@ function Index() {
       <section className="border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.05fr_0.95fr] md:py-24">
           <div>
-            <Label>Radar de obras · Distrito Federal</Label>
+            <Label>Inteligência de Mercado B2B · Distrito Federal</Label>
             <h1 className="mt-5 text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
-              Chegue primeiro na obra.{" "}
-              <span className="text-signal">Feche antes do concorrente.</span>
+              Inteligência de Mercado para Fornecedores da Construção no DF.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              O RadarObrasDF monitora o DODF todos os dias úteis e entrega no seu
-              WhatsApp, às 8h, cada obra e reforma aprovada pela SEDUH/CAP — com
-              requerente, endereço, metragem e responsável técnico.
+              Monitore grandes contratos públicos e obras privadas em tempo real. 
+              Antecipe-se à demanda de insumos, máquinas pesadas e serviços especializados.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <PrimaryCta />
             </div>
             <p className="mt-8 border-l-2 border-signal pl-4 font-mono text-sm text-muted-foreground">
-              Usado por locadoras de caçamba, andaime e equipamentos que vendem
-              para canteiros no DF.
+              A central de inteligência para indústrias de concreto, aço e locação de frotas pesadas no DF.
             </p>
           </div>
 
@@ -333,28 +330,22 @@ function Index() {
             <div className="space-y-3 p-4 font-mono text-xs leading-relaxed">
               {[
                 {
+                  tipo: "CONTRATO PÚBLICO",
+                  ra: "SIA/Guará · Complexo Viário",
+                  m: "R$ 39.375.515,77",
+                  req: "Empresa: Hytec Construções",
+                },
+                {
                   tipo: "ALVARÁ DE CONSTRUÇÃO",
                   ra: "Lago Sul",
                   m: "1.240 m²",
-                  req: "Requerente: incorporadora residencial",
+                  req: "Requerente: Incorporadora Residencial",
                 },
                 {
-                  tipo: "ALVARÁ DE REFORMA",
-                  ra: "Asa Sul",
-                  m: "380 m²",
-                  req: "Requerente: condomínio comercial",
-                },
-                {
-                  tipo: "DEMOLIÇÃO",
-                  ra: "Vicente Pires",
-                  m: "620 m²",
-                  req: "Requerente: pessoa física",
-                },
-                {
-                  tipo: "HABITE-SE",
-                  ra: "Águas Claras",
-                  m: "8.900 m²",
-                  req: "Requerente: construtora",
+                  tipo: "OBRA PÚBLICA",
+                  ra: "Planaltina · Parque Linear",
+                  m: "R$ 6.100.000,00",
+                  req: "Processo SEI identificado",
                 },
               ].map((a) => (
                 <div
@@ -366,15 +357,15 @@ function Index() {
                     <span className="text-accent">{a.m}</span>
                   </div>
                   <div className="mt-1.5 text-muted-foreground">
-                    RA: {a.ra} · {a.req}
+                    Local: {a.ra} · {a.req}
                   </div>
                   <div className="mt-1 text-muted-foreground">
-                    processo SEI registrado · responsável técnico identificado
+                    inteligência em tempo real · monitoramento de contratos
                   </div>
                 </div>
               ))}
               <div className="pt-1 text-muted-foreground">
-                &gt; entrega diária no WhatsApp às 08:00_
+                &gt; entrega diária de inteligência às 08:00_
               </div>
             </div>
           </div>
@@ -458,9 +449,9 @@ function Index() {
       {/* PARA QUEM É */}
       <section className="border-b border-border">
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
-          <Label>Para quem é</Label>
+          <Label>Público-Alvo</Label>
           <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight md:text-4xl">
-            Se você vende para canteiro de obra no DF, o radar é seu.
+            Inteligência estratégica para quem move a construção civil no DF.
           </h2>
           <ul className="mt-10 divide-y divide-border border border-border bg-card">
             {segmentos.map((s, i) => (
@@ -480,23 +471,21 @@ function Index() {
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
           <div className="relative border border-signal/40 bg-card p-8 md:p-12">
             <div className="absolute -top-3 right-8 bg-signal px-3 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-primary-foreground shadow-lg">
-              ROI Garantido
+              ROI Exponencial
             </div>
-            <Label>Conta rápida</Label>
+            <Label>Argumento de Valor</Label>
             <p className="mt-5 max-w-3xl text-2xl font-semibold leading-snug md:text-3xl">
-              Um único contrato de obra rende de{" "}
-              <span className="text-signal">R$ 4.000 a R$ 20.000</span> para uma
-              locadora. O radar se paga no primeiro contrato fechado — o resto do
-              mês é lucro.
+              Um único contrato de fornecimento de concreto ou uma semana de locação de frota paga o investimento no Radar por anos. 
+              <span className="text-signal"> Nossa inteligência se paga no primeiro lead qualificado</span> — o resto é escala para o seu comercial.
             </p>
             <p className="mt-4 font-mono text-sm font-bold text-signal">
-              * Uma única obra fechada paga 12 meses de assinatura do Radar.
+              * O ticket médio alto desses contratos torna o investimento no Radar irrelevante frente ao lucro gerado.
             </p>
             <div className="mt-8 grid gap-px border border-border bg-border sm:grid-cols-3">
               {[
-                { k: "1 contrato", v: "R$ 4.000 – R$ 20.000" },
-                { k: "Custo do radar", v: "a partir de R$ 490/mês" },
-                { k: "Alertas por ano", v: "todos os dias úteis" },
+                { k: "Ticket Médio", v: "Alta Escala B2B" },
+                { k: "Investimento", v: "R$ 490/mês" },
+                { k: "Retorno", v: "No 1º lead qualificado" },
               ].map((x) => (
                 <div key={x.k} className="bg-card p-5">
                   <div className="term-label text-muted-foreground">{x.k}</div>
@@ -513,9 +502,9 @@ function Index() {
       {/* PREÇOS */}
       <section id="planos" className="border-b border-border scroll-mt-16">
         <div className="mx-auto max-w-6xl px-5 py-16 md:py-20">
-          <Label>Planos</Label>
+          <Label>Central de Inteligência</Label>
           <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Escolha o plano e comece hoje.
+            Escolha sua escala de monitoramento.
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {planos.map((p) => (
@@ -580,13 +569,12 @@ function Index() {
       {/* CTA FINAL */}
       <section id="final" className="scroll-mt-16">
         <div className="mx-auto max-w-6xl px-5 py-20 text-center md:py-28">
-          <Label>Última chamada</Label>
+          <Label>Decisão Estratégica</Label>
           <h2 className="mx-auto mt-5 max-w-3xl text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-            Quero receber obras antes dos concorrentes.
+            Domine o mercado de insumos e contratos no DF.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-lg text-muted-foreground">
-            Ative o radar hoje e receba amanhã, às 8h no WhatsApp, as obras
-            aprovadas no Distrito Federal.
+            Ative sua central de inteligência hoje e receba amanhã, às 8h no WhatsApp, os novos contratos e obras do Distrito Federal.
           </p>
           <div className="mt-9 flex flex-col items-center gap-3">
             <PrimaryCta className="w-full max-w-sm" />
@@ -604,11 +592,10 @@ function Index() {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="border-border">
               <AccordionTrigger className="font-mono text-sm font-bold uppercase tracking-wide hover:no-underline">
-                Os dados são oficiais?
+                Como os contratos são identificados?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Sim, monitoramos o DODF em tempo real e extraímos as informações
-                diretamente das publicações da SEDUH/CAP.
+                Monitoramos o DODF, licitações públicas e alvarás da SEDUH/CAP em tempo real, utilizando processamento de dados para identificar novos contratos de alto valor e obras de impacto.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2" className="border-border">
@@ -622,11 +609,10 @@ function Index() {
             </AccordionItem>
             <AccordionItem value="item-3" className="border-border">
               <AccordionTrigger className="font-mono text-sm font-bold uppercase tracking-wide hover:no-underline">
-                Como recebo?
+                Qual o formato da entrega?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Você recebe alertas diários via Telegram/WhatsApp às 8h e também
-                possui acesso ao nosso painel web exclusivo para assinantes.
+                Você recebe alertas estratégicos via WhatsApp às 8h e possui acesso a um painel de inteligência web para filtros avançados e exportação de dados.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
@@ -635,8 +621,8 @@ function Index() {
 
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-8 font-mono text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <span>RadarObrasDF · Distrito Federal</span>
-          <span>Fonte pública: DODF — publicações SEDUH/CAP</span>
+          <span>Plataforma de Inteligência B2B · Distrito Federal</span>
+          <span>Fonte: DODF e Monitoramento de Contratos Públicos</span>
         </div>
       </footer>
     </main>
