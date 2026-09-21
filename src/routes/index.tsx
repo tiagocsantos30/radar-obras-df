@@ -16,7 +16,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label as FormLabel } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { Radar } from "lucide-react";
+import { Radar, MessageCircle } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -66,7 +66,7 @@ function SampleForm({ trigger }: { trigger: React.ReactNode }) {
     e.preventDefault();
     // Mensagem clara e natural para o cliente enviar
     const message = encodeURIComponent(`Olá! Vi o Radar Obras e quero receber os 3 leads grátis de hoje.`);
-    window.location.href = `https://wa.me/5561995576586?text=${message}`;
+    window.open(`https://wa.me/5561995576586?text=${message}`, "_blank", "noopener,noreferrer");
   };
 
   if (submitted) {
@@ -289,6 +289,23 @@ const planos = [
   },
 ];
 
+function FloatingWhatsAppButton() {
+  const message = encodeURIComponent("Olá! Vi o Radar Obras e quero receber os 3 leads grátis de hoje.");
+  return (
+    <a
+      href={`https://wa.me/5561995576586?text=${message}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-[#25D366] px-4 py-3 text-white shadow-2xl transition-transform hover:scale-105 active:scale-95 sm:px-6"
+    >
+      <MessageCircle className="size-5 fill-current" />
+      <span className="font-mono text-xs font-bold uppercase tracking-widest">
+        Ver Obras de Hoje
+      </span>
+    </a>
+  );
+}
+
 function Index() {
   return (
     <main className="min-h-screen">
@@ -397,6 +414,8 @@ function Index() {
                     <h3 className="text-sm font-bold leading-tight">{item.obra}</h3>
                     <a 
                       href={`https://wa.me/5561995576586?text=${item.msg}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="mt-3 inline-flex w-full items-center justify-center border border-signal px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-widest text-signal transition-colors hover:bg-signal hover:text-primary-foreground"
                     >
                       {item.cta}
@@ -591,6 +610,8 @@ function Index() {
                 </ul>
                 <a
                   href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`mt-8 inline-flex items-center justify-center px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-widest transition-opacity hover:opacity-85 ${
                     p.destaque
                       ? "bg-primary text-primary-foreground"
@@ -667,6 +688,7 @@ function Index() {
           <span>Fonte: DODF, SEAPE e Monitoramento de Contratos Públicos</span>
         </div>
       </footer>
+      <FloatingWhatsAppButton />
     </main>
   );
 }
