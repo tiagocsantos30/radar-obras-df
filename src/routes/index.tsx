@@ -59,7 +59,7 @@ function SampleForm({ trigger }: { trigger: React.ReactNode }) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = encodeURIComponent(`Olá, meu nome é ${name}. Gostaria de receber a amostra de obras de hoje (PDF).`);
+    const message = encodeURIComponent(`Quero receber 3 Leads de hoje no WhatsApp (Grátis). Vi que você se interessou pelas obras de hoje, tenho os detalhes aqui, quer que eu te envie?`);
     window.location.href = `https://wa.me/5561995576586?text=${message}`;
   };
 
@@ -92,21 +92,21 @@ function SampleForm({ trigger }: { trigger: React.ReactNode }) {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="font-mono text-xl font-bold uppercase tracking-tight">
-            Amostra de Inteligência de Mercado
+            Receber 3 Leads de Hoje
           </DialogTitle>
           <DialogDescription>
-            Informe seus dados para receber o PDF com os contratos e obras de hoje no seu
-            WhatsApp.
+            Informe seus dados para receber os detalhes de 3 obras reais publicadas hoje no seu
+            WhatsApp (Grátis).
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="grid gap-6 py-4">
           <div className="grid gap-2">
             <FormLabel htmlFor="name" className="font-mono text-xs uppercase">
-              Nome
+              Seu Nome
             </FormLabel>
             <Input
               id="name"
-              placeholder="Seu nome"
+              placeholder="Como podemos te chamar?"
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -118,7 +118,7 @@ function SampleForm({ trigger }: { trigger: React.ReactNode }) {
               htmlFor="whatsapp"
               className="font-mono text-xs uppercase"
             >
-              WhatsApp
+              Seu WhatsApp
             </FormLabel>
             <Input
               id="whatsapp"
@@ -133,7 +133,7 @@ function SampleForm({ trigger }: { trigger: React.ReactNode }) {
             type="submit"
             className="mt-2 w-full bg-primary py-6 font-mono text-sm font-bold uppercase tracking-widest text-primary-foreground transition-opacity hover:opacity-85"
           >
-            Receber Amostra de Inteligência (PDF)
+            Quero Meus 3 Leads Grátis Agora
           </Button>
         </form>
       </DialogContent>
@@ -148,7 +148,7 @@ function PrimaryCta({ className = "" }: { className?: string }) {
         <button
           className={`inline-flex items-center justify-center gap-2 bg-primary px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-widest text-primary-foreground transition-opacity hover:opacity-85 ${className}`}
         >
-          Receber Amostra de Obras de Hoje (PDF)
+          Receber 3 Leads de hoje no WhatsApp (Grátis)
         </button>
       }
     />
@@ -242,32 +242,44 @@ const dores = [
 
 const planos = [
   {
-    nome: "Básico",
-    preco: "R$ 490",
-    resumo: "Para quem quer testar o radar com um vendedor.",
+    nome: "Lead Grátis",
+    preco: "Grátis",
+    resumo: "Receba 3 leads de hoje no WhatsApp.",
     itens: [
-      "Alertas diários no WhatsApp",
-      "Painel web filtrável",
-      "1 usuário",
-      "Monitoramento de Alvarás e Contratos",
+      "Amostra de 3 obras reais",
+      "Receba direto no WhatsApp",
+      "Ideal para primeiro contato",
     ],
     destaque: false,
-    cta: "Assinar e Ativar Radar",
+    cta: "Receber 3 Leads de hoje no WhatsApp (Grátis)",
+    link: "https://wa.me/5561995576586?text=Quero+receber+3+leads+de+hoje+no+WhatsApp+Grátis",
   },
   {
-    nome: "Pro",
-    preco: "R$ 890",
-    resumo: "Para o time comercial inteiro trabalhar o radar.",
+    nome: "Radar Flash",
+    preco: "R$ 47",
+    resumo: "Teste o radar por 7 dias. Ideal para o primeiro contrato.",
     itens: [
-      "Tudo do Básico",
-      "Multi-usuários",
-      "Exportação CSV / Excel para CRM",
-      "Filtros avançados por consultor",
-      "Prioridade no suporte",
-      "Relatórios de inteligência customizados para grandes frotas e indústrias.",
+      "Acesso por 7 dias",
+      "Alertas diários no WhatsApp",
+      "Custo menor que um almoço",
     ],
     destaque: true,
-    cta: "Assinar e Ativar Radar",
+    cta: "Testar Radar Flash",
+    link: "https://wa.me/5561995576586?text=Quero+testar+o+Radar+Flash+por+7+dias+por+R$47",
+  },
+  {
+    nome: "Profissional",
+    preco: "R$ 490",
+    resumo: "Acesso total e alertas em tempo real. O custo de 1 lead paga 1 ano.",
+    itens: [
+      "Acesso total",
+      "Alertas em tempo real",
+      "Monitoramento completo DODF/SEAPE",
+      "Suporte exclusivo",
+    ],
+    destaque: false,
+    cta: "Assinar Plano Profissional",
+    link: "https://wa.me/5561995576586?text=Quero+acessar+o+Plano+Profissional+do+RadarObrasDF",
   },
 ];
 
@@ -300,74 +312,96 @@ function Index() {
       <section className="border-b border-border">
         <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[1.05fr_0.95fr] md:py-24">
           <div>
-            <Label>Inteligência de Mercado B2B · Distrito Federal</Label>
+            <div className="mb-4 flex flex-wrap gap-2">
+              <span className="inline-flex items-center bg-signal/10 px-2 py-1 font-mono text-[10px] font-bold uppercase tracking-widest text-signal border border-signal/20">
+                Radar Atualizado: 14 Novas Obras e Licitações detectadas no DF hoje (21/09)
+              </span>
+            </div>
             <h1 className="mt-5 text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
-              Inteligência de Mercado para Fornecedores da Construção no DF.
+              Não chegue quando o tapume já subiu.
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              Monitore grandes contratos públicos e obras privadas em tempo real. 
-              Antecipe-se à demanda de insumos, máquinas pesadas e serviços especializados.
+              Acesse alvarás, projetos e contratos publicados no DODF de hoje antes da sua concorrência.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <PrimaryCta />
             </div>
-            <p className="mt-8 border-l-2 border-signal pl-4 font-mono text-sm text-muted-foreground">
-              A central de inteligência para indústrias de concreto, aço e locação de frotas pesadas no DF.
-            </p>
-          </div>
-
-          {/* Terminal de alertas */}
-          <div className="border border-border bg-card">
-            <div className="flex items-center justify-between border-b border-border px-4 py-2.5">
-              <span className="term-label text-muted-foreground">
-                alertas_do_dia.log
-              </span>
-              <span className="flex items-center gap-2 font-mono text-xs text-signal">
-                <span className="signal-dot block size-1.5 rounded-full bg-signal" />
-                ao vivo
-              </span>
-            </div>
-            <div className="space-y-3 p-4 font-mono text-xs leading-relaxed">
-              {[
-                {
-                  tipo: "CONTRATO PÚBLICO",
-                  ra: "SIA/Guará · Complexo Viário",
-                  m: "R$ 39.375.515,77",
-                  req: "Empresa: Hytec Construções",
-                },
-                {
-                  tipo: "ALVARÁ DE CONSTRUÇÃO",
-                  ra: "Lago Sul",
-                  m: "1.240 m²",
-                  req: "Requerente: Incorporadora Residencial",
-                },
-                {
-                  tipo: "OBRA PÚBLICA",
-                  ra: "Planaltina · Parque Linear",
-                  m: "R$ 6.100.000,00",
-                  req: "Processo SEI identificado",
-                },
-              ].map((a) => (
-                <div
-                  key={a.tipo + a.ra}
-                  className="border border-border bg-background p-3"
-                >
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="font-bold text-signal">{a.tipo}</span>
-                    <span className="text-accent">{a.m}</span>
-                  </div>
-                  <div className="mt-1.5 text-muted-foreground">
-                    Local: {a.ra} · {a.req}
-                  </div>
-                  <div className="mt-1 text-muted-foreground">
-                    inteligência em tempo real · monitoramento de contratos
-                  </div>
+            
+            <div className="mt-10 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="flex size-8 items-center justify-center rounded-full bg-signal/10">
+                  <span className="block size-2 rounded-full bg-signal animate-pulse" />
                 </div>
-              ))}
-              <div className="pt-1 text-muted-foreground">
-                &gt; entrega diária de inteligência às 08:00_
+                <div className="font-mono text-xs">
+                  <span className="block font-bold uppercase">Última varredura concluída às 11:40</span>
+                  <span className="text-muted-foreground">85 editais abertos e 1486 contratos monitorados na base</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 border border-border bg-card p-3 w-fit">
+                <span className="text-[10px] font-bold uppercase tracking-tighter text-muted-foreground">Selo de Verificação:</span>
+                <span className="font-mono text-[10px] font-bold text-foreground">Dados extraídos diretamente do DODF e SEAPE</span>
               </div>
             </div>
+          </div>
+
+          {/* Vitrine de Oportunidades */}
+          <div className="flex flex-col gap-4">
+            <div className="border border-border bg-card">
+              <div className="flex items-center justify-between border-b border-border px-4 py-2.5">
+                <span className="term-label text-muted-foreground font-bold">
+                  VITRINE DE OPORTUNIDADES (21/09)
+                </span>
+                <span className="flex items-center gap-2 font-mono text-xs text-signal">
+                  <span className="signal-dot block size-1.5 rounded-full bg-signal" />
+                  AO VIVO
+                </span>
+              </div>
+              <div className="divide-y divide-border overflow-hidden">
+                {[
+                  {
+                    obra: "Requalificação de Sistema Viário",
+                    local: "Lago Sul (QI 9/11)",
+                    cta: "Liberar Contato no Whats",
+                    msg: "Quero+acessar+as+obras+do+Lago+Sul+que+saíram+no+DODF+de+hoje"
+                  },
+                  {
+                    obra: "Manutenção Predial Emergencial",
+                    local: "SES-DF (Brasília)",
+                    cta: "Liberar Detalhes no Whats",
+                    msg: "Quero+detalhes+da+manutenção+emergencial+da+SES-DF+de+hoje"
+                  },
+                  {
+                    obra: "Reversão de Desdobro (Comercial)",
+                    local: "Lago Sul (QI 28)",
+                    cta: "Falar com Consultor",
+                    msg: "Quero+informações+sobre+a+reversão+de+desdobro+no+Lago+Sul+de+hoje"
+                  },
+                  {
+                    obra: "Licitação: Eng. Civil e Elétrica",
+                    local: "Brasília (Min. Defesa)",
+                    cta: "Ver Edital no Whats",
+                    msg: "Quero+acessar+o+edital+da+licitação+do+Min+Defesa+de+hoje"
+                  },
+                ].map((item) => (
+                  <div key={item.obra} className="group relative bg-background p-4 transition-colors hover:bg-muted/50">
+                    <div className="mb-1 flex items-center justify-between gap-4">
+                      <span className="font-mono text-[10px] font-bold text-signal uppercase">Oportunidade Detectada</span>
+                      <span className="text-[10px] text-muted-foreground">{item.local}</span>
+                    </div>
+                    <h3 className="text-sm font-bold leading-tight">{item.obra}</h3>
+                    <a 
+                      href={`https://wa.me/5561995576586?text=${item.msg}`}
+                      className="mt-3 inline-flex w-full items-center justify-center border border-signal px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-widest text-signal transition-colors hover:bg-signal hover:text-primary-foreground"
+                    >
+                      {item.cta}
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <p className="font-mono text-[10px] text-muted-foreground text-center">
+              * Isso prova que o sistema funciona em tempo real.
+            </p>
           </div>
         </div>
       </section>
@@ -506,7 +540,7 @@ function Index() {
           <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
             Escolha sua escala de monitoramento.
           </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
             {planos.map((p) => (
               <div
                 key={p.nome}
@@ -530,9 +564,11 @@ function Index() {
                   <span className="text-4xl font-bold tracking-tight">
                     {p.preco}
                   </span>
-                  <span className="font-mono text-sm text-muted-foreground">
-                    /mês
-                  </span>
+                  {p.nome !== "Lead Grátis" && (
+                    <span className="font-mono text-sm text-muted-foreground">
+                      {p.nome === "Radar Flash" ? "/7 dias" : "/mês"}
+                    </span>
+                  )}
                 </div>
                 <p className="mt-3 text-sm text-muted-foreground">{p.resumo}</p>
                 <ul className="mt-6 flex-1 space-y-3">
@@ -548,7 +584,7 @@ function Index() {
                   ))}
                 </ul>
                 <a
-                  href={`https://wa.me/5561995576586?text=Olá, quero assinar o plano ${p.nome} do RadarObrasDF`}
+                  href={p.link}
                   className={`mt-8 inline-flex items-center justify-center px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-widest transition-opacity hover:opacity-85 ${
                     p.destaque
                       ? "bg-primary text-primary-foreground"
@@ -591,7 +627,7 @@ function Index() {
           </h2>
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1" className="border-border">
-              <AccordionTrigger className="font-mono text-sm font-bold uppercase tracking-wide hover:no-underline">
+              <AccordionTrigger className="font-mono text-sm font-bold uppercase tracking-wide hover:no-underline text-left">
                 Como os contratos são identificados?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -599,7 +635,7 @@ function Index() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2" className="border-border">
-              <AccordionTrigger className="font-mono text-sm font-bold uppercase tracking-wide hover:no-underline">
+              <AccordionTrigger className="font-mono text-sm font-bold uppercase tracking-wide hover:no-underline text-left">
                 Posso cancelar?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -608,7 +644,7 @@ function Index() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3" className="border-border">
-              <AccordionTrigger className="font-mono text-sm font-bold uppercase tracking-wide hover:no-underline">
+              <AccordionTrigger className="font-mono text-sm font-bold uppercase tracking-wide hover:no-underline text-left">
                 Qual o formato da entrega?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
@@ -622,7 +658,7 @@ function Index() {
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-8 font-mono text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <span>Plataforma de Inteligência B2B · Distrito Federal</span>
-          <span>Fonte: DODF e Monitoramento de Contratos Públicos</span>
+          <span>Fonte: DODF, SEAPE e Monitoramento de Contratos Públicos</span>
         </div>
       </footer>
     </main>
