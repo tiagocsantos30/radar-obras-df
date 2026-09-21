@@ -1,5 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import * as React from "react";
+import { inject } from "@vercel/analytics";
+
+// Initialize Analytics
+inject();
+
 import {
   Dialog,
   DialogContent,
