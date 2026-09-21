@@ -5,17 +5,6 @@ import { inject } from "@vercel/analytics";
 // Initialize Analytics
 inject();
 
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label as FormLabel } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
 import { Radar, MessageCircle } from "lucide-react";
 import {
   Accordion,
@@ -57,107 +46,17 @@ function Label({ children }: { children: React.ReactNode }) {
   );
 }
 
-function SampleForm({ trigger }: { trigger: React.ReactNode }) {
-  const [submitted, setSubmitted] = React.useState(false);
-  const [name, setName] = React.useState("");
-  const [whatsapp, setWhatsapp] = React.useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Mensagem clara e natural para o cliente enviar
-    const message = encodeURIComponent(`Olá! Vi o Radar Obras e quero receber os 3 leads grátis de hoje.`);
-    window.open(`https://wa.me/5561995576586?text=${message}`, "_blank", "noopener,noreferrer");
-  };
-
-  if (submitted) {
-    return (
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-signal">
-            Solicitação recebida!
-          </DialogTitle>
-          <DialogDescription className="pt-4 text-lg leading-relaxed text-foreground">
-            Para garantir que você receba a inteligência mais estratégica para o seu negócio, um consultor enviará sua amostra personalizada de contratos e obras diretamente no seu WhatsApp em instantes.
-          </DialogDescription>
-        </DialogHeader>
-        <div className="mt-6 flex justify-end">
-          <Button
-            onClick={() => setSubmitted(false)}
-            className="bg-primary font-mono text-sm font-bold uppercase tracking-widest"
-          >
-            Fechar
-          </Button>
-        </div>
-      </DialogContent>
-    );
-  }
-
-  return (
-    <Dialog>
-      <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle className="font-mono text-xl font-bold uppercase tracking-tight">
-            Receber 3 Leads de Hoje
-          </DialogTitle>
-          <DialogDescription>
-            Informe seus dados para receber os detalhes de 3 obras reais publicadas hoje no seu
-            WhatsApp (Grátis).
-          </DialogDescription>
-        </DialogHeader>
-        <form onSubmit={handleSubmit} className="grid gap-6 py-4">
-          <div className="grid gap-2">
-            <FormLabel htmlFor="name" className="font-mono text-xs uppercase">
-              Seu Nome
-            </FormLabel>
-            <Input
-              id="name"
-              placeholder="Como podemos te chamar?"
-              required
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="rounded-none border-border bg-background focus-visible:ring-signal"
-            />
-          </div>
-          <div className="grid gap-2">
-            <FormLabel
-              htmlFor="whatsapp"
-              className="font-mono text-xs uppercase"
-            >
-              Seu WhatsApp
-            </FormLabel>
-            <Input
-              id="whatsapp"
-              placeholder="(61) 99999-9999"
-              required
-              value={whatsapp}
-              onChange={(e) => setWhatsapp(e.target.value)}
-              className="rounded-none border-border bg-background focus-visible:ring-signal"
-            />
-          </div>
-          <Button
-            type="submit"
-            className="mt-2 w-full bg-primary py-6 font-mono text-sm font-bold uppercase tracking-widest text-primary-foreground transition-opacity hover:opacity-85"
-          >
-            Quero Meus 3 Leads Grátis Agora
-          </Button>
-        </form>
-      </DialogContent>
-    </Dialog>
-  );
-}
-
 function PrimaryCta({ className = "" }: { className?: string }) {
+  const message = encodeURIComponent(`Olá! Vi o Radar Obras e quero receber os 3 leads grátis de hoje.`);
   return (
-    <SampleForm
-      trigger={
-        <button
-          className={`inline-flex items-center justify-center gap-2 bg-primary px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-widest text-primary-foreground transition-opacity hover:opacity-85 ${className}`}
-        >
-          Receber 3 Leads de hoje no WhatsApp (Grátis)
-        </button>
-      }
-    />
+    <a
+      href={`https://wa.me/5561995576586?text=${message}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center justify-center gap-2 bg-primary px-6 py-3.5 font-mono text-sm font-bold uppercase tracking-widest text-primary-foreground transition-opacity hover:opacity-85 ${className}`}
+    >
+      Receber 3 Leads de hoje no WhatsApp (Grátis)
+    </a>
   );
 }
 
@@ -321,13 +220,14 @@ function Index() {
           <div className="hidden font-mono text-xs text-muted-foreground sm:block">
             monitoramento em tempo real · contratos e insumos · DF
           </div>
-          <SampleForm
-            trigger={
-              <button className="font-mono text-xs font-bold uppercase tracking-widest text-signal hover:underline">
-                Receber Amostra
-              </button>
-            }
-          />
+          <a
+            href={`https://wa.me/5561995576586?text=${encodeURIComponent("Olá! Vi o Radar Obras e quero receber os 3 leads grátis de hoje.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-xs font-bold uppercase tracking-widest text-signal hover:underline"
+          >
+            Receber Amostra
+          </a>
         </div>
       </header>
 
