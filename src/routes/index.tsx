@@ -64,7 +64,8 @@ function SampleForm({ trigger }: { trigger: React.ReactNode }) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = encodeURIComponent(`Quero receber 3 Leads de hoje no WhatsApp (Grátis). Vi que você se interessou pelas obras de hoje, tenho os detalhes aqui, quer que eu te envie?`);
+    // Mensagem clara e natural para o cliente enviar
+    const message = encodeURIComponent(`Olá! Vi o Radar Obras e quero receber os 3 leads grátis de hoje.`);
     window.location.href = `https://wa.me/5561995576586?text=${message}`;
   };
 
@@ -257,7 +258,7 @@ const planos = [
     ],
     destaque: false,
     cta: "Receber 3 Leads de hoje no WhatsApp (Grátis)",
-    link: "https://wa.me/5561995576586?text=Quero+receber+3+leads+de+hoje+no+WhatsApp+Grátis",
+    link: "https://wa.me/5561995576586?text=Olá!+Vi+o+Radar+Obras+e+quero+receber+os+3+leads+grátis+de+hoje.",
   },
   {
     nome: "Radar Flash",
@@ -367,25 +368,25 @@ function Index() {
                     obra: "Requalificação de Sistema Viário",
                     local: "Lago Sul (QI 9/11)",
                     cta: "Liberar Contato no Whats",
-                    msg: "Quero+acessar+as+obras+do+Lago+Sul+que+saíram+no+DODF+de+hoje"
+                    msg: "Olá!+Vi+a+obra+de+Requalificação+no+Lago+Sul+(QI+9/11)+e+quero+os+detalhes."
                   },
                   {
                     obra: "Manutenção Predial Emergencial",
                     local: "SES-DF (Brasília)",
                     cta: "Liberar Detalhes no Whats",
-                    msg: "Quero+detalhes+da+manutenção+emergencial+da+SES-DF+de+hoje"
+                    msg: "Olá!+Tenho+interesse+na+Manutenção+Predial+da+SES-DF+de+hoje.+Pode+me+enviar?"
                   },
                   {
                     obra: "Reversão de Desdobro (Comercial)",
                     local: "Lago Sul (QI 28)",
                     cta: "Falar com Consultor",
-                    msg: "Quero+informações+sobre+a+reversão+de+desdobro+no+Lago+Sul+de+hoje"
+                    msg: "Quero+informações+sobre+a+reversão+de+desdobro+no+Lago+Sul+de+hoje."
                   },
                   {
                     obra: "Licitação: Eng. Civil e Elétrica",
                     local: "Brasília (Min. Defesa)",
                     cta: "Ver Edital no Whats",
-                    msg: "Quero+acessar+o+edital+da+licitação+do+Min+Defesa+de+hoje"
+                    msg: "Olá!+Quero+acessar+o+edital+da+licitação+do+Min+Defesa+de+hoje."
                   },
                 ].map((item) => (
                   <div key={item.obra} className="group relative bg-background p-4 transition-colors hover:bg-muted/50">
